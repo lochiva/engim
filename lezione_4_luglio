@@ -26,7 +26,7 @@ engim2017
 
 
 definizione del progetto "scommetti@mo luglio"
-in "scommetti@mo luglio" il bnco effetua una serie di estrazioni, di numeri tra 1 e 10.   I partecipanti possono provare ad indovinare il numero. Chi indovina avrà gloria e onori, e il suo nome pubblicato sul sito delle scommesse.
+in "scommetti@mo luglio" il banco effetua una serie di estrazioni, di numeri tra 1 e 10.   I partecipanti possono provare ad indovinare il numero. Chi indovina avrà gloria e onori, e il suo nome pubblicato sul sito delle scommesse.
 
 Il sistema non è direttamente accessibile ai client, ma l'accesso viene mediato da una serie di server detti "mediatori".
 
@@ -45,7 +45,7 @@ in  index.php vengono visualizzati tutte le scommesse, in elenco, e per ognuna v
 -il numero di scommettitori e  una casella di input che consente all'utente di scommettere, inserendo un valore e premendo il tasto
 (se la scommessa è aperta)
 
-Alla pressione del tasto viene chiamato "scommetti.php" che in POS riceve il nome della scommessa e il valore. Il nick viene preso dalla sessione.
+Alla pressione del tasto viene chiamato "index.php" con action="scommetti" che in POST riceve il nome della scommessa e il valore. Il nick viene preso dalla sessione. I dati così ricevuti vengono inviati al banco.
 
 L'elenco delle scommesse viene letto dal php del mediatore chiamando luglio/banco/getScommesse.php, che restituisce un flusso json con tutte le scommesse con i relativi dati.
 
