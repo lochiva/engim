@@ -1,0 +1,45 @@
+nella parte di mediatore:
+index.php 
+  
+  include app.php  //  boot app
+	include functions.php  // include functions
+  include auth.php      // check auth
+ 
+ if ($_GET['action']=="scommetti"){
+// invia la richiesta 
+   $esito=scommetti($_SESSION['username'], $_POST['scommessa'], $_POST['valore']);
+  
+}
+
+ include list.php
+
+
+app.php:
+  session_start();
+
+
+auth.php
+  if (!isset($_SESSION['username'])){
+     header('location login.php');
+  die();
+  }
+
+login.php
+  if ($_SERVER['REQUEST_METHOD'] === 'POST'){ 
+ $_SESSION['username']=trim( $_POST['username'] );
+redirect -> index.php
+die():
+}
+// print form
+
+
+
+// la parte di banco
+
+
+
+
+
+
+
+
