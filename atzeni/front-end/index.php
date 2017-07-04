@@ -1,14 +1,15 @@
 <?php 
 	include "newSession.php";
+
 	
-	$_SESSION["scommesse"] = $_POST["name"];
+/*	$_SESSION["scommesse"] = $_POST["name"];
 	echo $_SESSION["scommesse"];
-	
+	*/
 	
 	
 	
 	if (!isset($_SESSION["scommesse"]) || ($_SESSION["scommesse"])=="" ) {
-		header('atzeni_luglio/atzeni/login.php');
+		header('location: login.php');
 	}
 	
 	

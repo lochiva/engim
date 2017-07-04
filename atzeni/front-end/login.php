@@ -13,9 +13,13 @@
 
 	include "newSession.php";
 
+if (isset($_POST["name"]) || $_SESSION["scommesse"]  !="" ){
 
+$_SESSION["scommesse"] = $_POST["name"];
+header('location: index.php');
+die();
 
-
+}
 ?>
 
 
@@ -32,7 +36,7 @@
             </div>
             <div class="row">
                 <div class="col-lg-12">
-                    <form name="sentMessage" id="contactForm" novalidate action="index.php" method="POST">
+                    <form name="sentMessage" id="contactForm" novalidate action="login.php" method="POST">
                         <div class="row">
                             <div class="col-md-6 col-md-offset-3">
                                 <div class="form-group">
