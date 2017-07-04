@@ -1,0 +1,123 @@
+
+https://github.com/lochiva/engim
+
+creare la cartella luglio in htdocs <vostro nome>
+ed eseguire da terminale:
+
+htdocs/<nome>/luglio/
+git clone https://github.com/lochiva/engim.git .
+
+creare una dir con il proprio cognome e con un file vuoto .keep
+ 
+mkdir ruffinengo
+ touch ruffinengo/.keep
+git config --global user.email ruffinengo@itoa.it
+git config --global user.name "ruffi"
+
+ git add ruffinengo/.keep 
+git commit  <nome>/.keep  -m "mia cartella"
+ 
+git push 
+
+
+ruffinengo@lochiva.com
+engim2017
+
+
+
+definizione del progetto "scommetti@mo luglio"
+in "scommetti@mo luglio" il bnco effetua una serie di estrazioni, di numeri tra 1 e 10.   I partecipanti possono provare ad indovinare il numero. Chi indovina avrà gloria e onori, e il suo nome pubblicato sul sito delle scommesse.
+
+Il sistema non è direttamente accessibile ai client, ma l'accesso viene mediato da una serie di server detti "mediatori".
+
+Il sistema centrale prende il nome di "banco"
+
+1) i client si autenticano con un nick name sui "mediatori", accedendo a:
+/luglio/mediatore
+
+la prima volta che il client accede viene portato su una pagina di login : login.php. Il login avviene con il solo nickname
+dopo il login il client viene portato su index.php
+
+Non serve registrazione.
+
+in  index.php vengono visualizzati tutte le scommesse, in elenco, e per ognuna viene indicato:
+- il vincitore della scommessa e il valore (se la scommessa è chiusa)
+-il numero di scommettitori e  una casella di input che consente all'utente di scommettere, inserendo un valore e premendo il tasto
+(se la scommessa è aperta)
+
+Alla pressione del tasto viene chiamato "scommetti.php" che in POS riceve il nome della scommessa e il valore. Il nick viene preso dalla sessione.
+
+L'elenco delle scommesse viene letto dal php del mediatore chiamando luglio/banco/getScommesse.php, che restituisce un flusso json con tutte le scommesse con i relativi dati.
+
+
+$scommesse[<nome>]
+						['stato']
+            ['scommettitori'][]=array([name][value]);
+						['estrazione']
+						['vincitore']
+
+
+l'altra funzione esposta dal banco è:
+banco/scommetti.php che il mediatore usa per passare i dati di una scommessa:
+ nickename
+ scommessa
+ valore
+ 
+quando una scommessa deve essere inserita nell'array delle scommesse
+salva il dato nelle scommesse
+
+
+
+
+
+le altre funzioni da realizzare in banco sono:
+
+addScommessa(nameScommessa):
+ crea una nuova scommessa
+estraiScommessa(nameScommessa):
+   estrae un numero e verifica chi sia il vincitore
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
